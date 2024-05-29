@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Exemplo em R</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Programa Exemplo em R</h1>
+        <a href="index.html" class="btn">Voltar ao Início</a>
+    </header>
+    <main>
+        <section>
+            <h2>Calculadora de Média em R</h2>
+            <p>Este é um exemplo de um programa simples em R que calcula a média de um conjunto de números fornecidos pelo usuário. O programa solicitará ao usuário que insira os números separados por vírgula e, em seguida, calculará a média.</p>
+            <pre><code># Função para calcular a média
+calcular_media <- function(valores) {
+  valores <- as.numeric(strsplit(valores, ",")[[1]])
+  media <- mean(valores)
+  return(media)
+}
+
+# Solicitar entrada do usuário
+valores <- readline(prompt="Digite os números separados por vírgula: ")
+
+# Calcular a média e imprimir o resultado
+media <- calcular_media(valores)
+cat("A média dos números fornecidos é:", media, "\n")
+</code></pre>
+        </section>
+        <section>
+            <h2>Explicação do Programa</h2>
+            <p>Neste programa, definimos uma função chamada <code>calcular_media</code> que recebe uma string de números separados por vírgula, converte-os em um vetor numérico e calcula a média. Em seguida, solicitamos ao usuário que insira os números, chamamos a função <code>calcular_media</code> e imprimimos o resultado.</p>
+        </section>
+        <section>
+            <h2>Vídeo Tutorial</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SeuLinkDoVideoAqui" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aprenda R. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
