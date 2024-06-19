@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações sobre R</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Informações sobre R</h1>
-        <a href="index.html" class="btn">Voltar ao Início</a>
+      <h1>Informações sobre R</h1>
+      <a href="index.html" class="btn">Voltar ao Início</a>
     </header>
     <main>
-        <section>
-            <h2>O que é R?</h2>
-            <p>R é uma linguagem de programação e um ambiente de software livre para computação estatística e gráficos. Ela é amplamente utilizada entre estatísticos e mineradores de dados para desenvolver software de estatística e realizar análise de dados.</p>
-        </section>
-        <section>
-            <h2>História do R</h2>
-            <p>R foi criado por Ross Ihaka e Robert Gentleman no Departamento de Estatística da Universidade de Auckland, Nova Zelândia, sendo desenvolvido a partir de 1993. R é amplamente utilizado por estatísticos e cientistas de dados.</p>
-        </section>
-        <section>
-            <h2>Principais Características</h2>
-            <ul>
-                <li>Suporte extensivo para técnicas de modelagem estatística.</li>
-                <li>Gráficos de alta qualidade, incluindo gráficos interativos.</li>
-                <li>Grande comunidade de usuários e desenvolvedores.</li>
-                <li>Grande número de pacotes disponíveis para diversas análises.</li>
-                <li>Suporte para análise de dados grandes.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Vantagens de Usar R</h2>
-            <ul>
-                <li>É uma linguagem de código aberto, o que significa que é gratuita para usar e modificar.</li>
-                <li>Oferece uma ampla gama de pacotes para várias áreas de aplicação.</li>
-                <li>Possui uma forte capacidade gráfica, ideal para visualização de dados.</li>
-                <li>Tem uma comunidade ativa que contribui para o desenvolvimento contínuo da linguagem.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Recursos e Comunidade</h2>
-            <p>R possui uma vasta quantidade de recursos disponíveis, incluindo:</p>
-            <ul>
-                <li>Documentação oficial e tutoriais.</li>
-                <li>Fóruns e grupos de discussão.</li>
-                <li>Cursos online e livros.</li>
-                <li>Pacotes adicionais no CRAN (Comprehensive R Archive Network).</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Sintaxe da Linguagem R</h2>
-            <p>A sintaxe da linguagem R é projetada para ser intuitiva para usuários com experiência em estatística. Aqui estão alguns exemplos básicos:</p>
-            <pre><code># Atribuição de valores
+      <section>
+        <h2>O que é R?</h2>
+        <p>
+          A linguagem R é uma ferramenta poderosa e gratuita para computação
+          estatística e criação de gráficos. Amplamente adotada por estatísticos
+          e cientistas de dados, facilita a criação de software estatístico e
+          análise de dados.
+        </p>
+      </section>
+      <section>
+        <h2>História do R</h2>
+        <p>
+          Desenvolvida por Ross Ihaka e Robert Gentleman na Universidade de
+          Auckland, Nova Zelândia, a linguagem R começou a tomar forma em 1993.
+          Hoje, é essencial no trabalho de muitos estatísticos e especialistas
+          em ciência de dados.
+        </p>
+      </section>
+      <section>
+        <h2>Principais Características</h2>
+        <ul>
+          <li>Suporte abrangente para técnicas de modelagem estatística.</li>
+          <li>
+            Capacidade de gerar gráficos de alta qualidade, incluindo gráficos
+            interativos.
+          </li>
+          <li>Comunidade grande e ativa de usuários e desenvolvedores.</li>
+          <li>
+            Ampla variedade de pacotes disponíveis para diferentes tipos de
+            análises.
+          </li>
+          <li>Suporte robusto para análise de grandes volumes de dados.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Vantagens de Usar R</h2>
+        <ul>
+          <li>
+            É uma linguagem de código aberto, permitindo uso e modificação
+            gratuitos.
+          </li>
+          <li>
+            Disponibiliza uma vasta gama de pacotes para múltiplas áreas de
+            aplicação.
+          </li>
+          <li>
+            Capacidades gráficas avançadas, ideais para visualização de dados.
+          </li>
+          <li>
+            Comunidade ativa que continuamente melhora e expande a linguagem.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Recursos e Comunidade</h2>
+        <p>R oferece uma abundância de recursos, como:</p>
+        <ul>
+          <li>Documentação oficial e guias.</li>
+          <li>Fóruns e grupos de discussão.</li>
+          <li>Cursos online e literatura especializada.</li>
+          <li>
+            Pacotes adicionais disponíveis no CRAN (Comprehensive R Archive
+            Network).
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Sintaxe da Linguagem R</h2>
+        <p>
+          A sintaxe do R é desenhada para ser intuitiva, especialmente para
+          aqueles com experiência em estatística. Exemplos básicos incluem:
+        </p>
+        <pre><code># Atribuição de valores
 x <- 10
 y <- 20
 
@@ -79,48 +111,68 @@ minha_funcao <- function(a, b) {
 # Uso da função
 resultado <- minha_funcao(x, y)
 </code></pre>
-        </section>
-        <section>
-            <h2>Funções Comuns em R</h2>
-            <ul>
-                <li><code>mean()</code>: Calcula a média de um vetor.</li>
-                <li><code>sd()</code>: Calcula o desvio padrão de um vetor.</li>
-                <li><code>summary()</code>: Fornece um resumo estatístico de um objeto.</li>
-                <li><code>lm()</code>: Ajusta um modelo de regressão linear.</li>
-                <li><code>plot()</code>: Cria gráficos bidimensionais.</li>
-                <li><code>hist()</code>: Cria um histograma.</li>
-                <li><code>ggplot2::ggplot()</code>: Cria gráficos sofisticados usando o pacote ggplot2.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Pacotes Populares em R</h2>
-            <p>R possui uma vasta gama de pacotes que ampliam suas funcionalidades. Alguns dos mais populares incluem:</p>
-            <ul>
-                <li><code>ggplot2</code>: Para visualização de dados.</li>
-                <li><code>dplyr</code>: Para manipulação de dados.</li>
-                <li><code>tidyr</code>: Para arranjar dados em formatos limpos.</li>
-                <li><code>shiny</code>: Para construir aplicações web interativas.</li>
-                <li><code>caret</code>: Para modelagem preditiva.</li>
-                <li><code>data.table</code>: Para manipulação eficiente de grandes conjuntos de dados.</li>
-                <li><code>stringr</code>: Para manipulação de strings.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Exemplos de Aplicação</h2>
-            <ul>
-                <li>Estatísticas descritivas e inferenciais.</li>
-                <li>Modelagem preditiva e machine learning.</li>
-                <li>Análise de séries temporais.</li>
-                <li>Bioestatística e análise genética.</li>
-                <li>Mineração de texto e análise de redes sociais.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Vídeo Tutorial</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SeuLinkDoVideoAqui" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
+      </section>
+      <section>
+        <h2>Funções Comuns em R</h2>
+        <ul>
+          <li><code>mean()</code>: Calcula a média de um vetor.</li>
+          <li><code>sd()</code>: Calcula o desvio padrão de um vetor.</li>
+          <li>
+            <code>summary()</code>: Fornece um resumo estatístico de um objeto.
+          </li>
+          <li><code>lm()</code>: Ajusta um modelo de regressão linear.</li>
+          <li><code>plot()</code>: Cria gráficos bidimensionais.</li>
+          <li><code>hist()</code>: Gera um histograma.</li>
+          <li>
+            <code>ggplot2::ggplot()</code>: Cria gráficos sofisticados
+            utilizando o pacote ggplot2.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Pacotes Populares em R</h2>
+        <p>
+          A linguagem R possui uma vasta biblioteca de pacotes que aumentam suas
+          capacidades. Alguns dos pacotes mais populares são:
+        </p>
+        <ul>
+          <li><code>ggplot2</code>: Para visualização de dados.</li>
+          <li><code>dplyr</code>: Para manipulação de dados.</li>
+          <li><code>tidyr</code>: Para organização de dados.</li>
+          <li><code>shiny</code>: Para criar aplicações web interativas.</li>
+          <li><code>caret</code>: Para modelagem preditiva.</li>
+          <li>
+            <code>data.table</code>: Para manipulação eficiente de grandes
+            conjuntos de dados.
+          </li>
+          <li><code>stringr</code>: Para manipulação de strings.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Exemplos de Aplicação</h2>
+        <ul>
+          <li>Estatísticas descritivas e inferenciais.</li>
+          <li>Modelagem preditiva e machine learning.</li>
+          <li>Análise de séries temporais.</li>
+          <li>Bioestatística e análise genética.</li>
+          <li>Mineração de texto e análise de redes sociais.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Vídeo Tutorial</h2>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/R4E9bRbfdds?si=vm35EFe5PTIg0-uD"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>

@@ -13,36 +13,84 @@
     </header>
     <main>
         <section>
-            <h2>Calculadora de Média em R</h2>
-            <p>Este é um exemplo de um programa simples em R que calcula a média de um conjunto de números fornecidos pelo usuário. O programa solicitará ao usuário que insira os números separados por vírgula e, em seguida, calculará a média.</p>
-            <pre><code># Função para calcular a média
-calcular_media <- function(valores) {
-  valores <- as.numeric(strsplit(valores, ",")[[1]])
-  media <- mean(valores)
-  return(media)
-}
+            <h2>Verificador de palindromos</h2>
+            <p>Este é um exemplo de um programa simples em R que verifica se uma palavra é palindromo e depois faz um grafico com os resultados</p>
+            <pre><code>library(ggplot2)
 
-# Solicitar entrada do usuário
-valores <- readline(prompt="Digite os números separados por vírgula: ")
-
-# Calcular a média e imprimir o resultado
-media <- calcular_media(valores)
-cat("A média dos números fornecidos é:", media, "\n")
-</code></pre>
-        </section>
-        <section>
-            <h2>Explicação do Programa</h2>
-            <p>Neste programa, definimos uma função chamada <code>calcular_media</code> que recebe uma string de números separados por vírgula, converte-os em um vetor numérico e calcula a média. Em seguida, solicitamos ao usuário que insira os números, chamamos a função <code>calcular_media</code> e imprimimos o resultado.</p>
-        </section>
-        <section>
-            <h2>Vídeo Tutorial</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SeuLinkDoVideoAqui" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+                # Função para verificar se uma string é um palíndromo
+                eh_palindromo <- function(texto) {
+                  # Remover espaços em branco e converter para minúsculas
+                  texto <- tolower(gsub(" ", "", texto))
+                  # Inverter a string
+                  invertido <- rev(strsplit(texto, "")[[1]])
+                  # Comparar a string original com a string invertida
+                  return(all(strsplit(texto, "")[[1]] == invertido))
+                }
+                
+                # Função principal
+                main <- function() {
+                  resultados <- data.frame(Palavra=character(), EhPalindromo=logical(), stringsAsFactors=FALSE)
+                  contador_execucoes <- 0
+                  
+                  repeat {
+                    # Entrada do usuário
+                    palavra <- readline(prompt="Digite uma palavra ou frase para verificar se é um palíndromo: ")
+                    
+                    # Verificar se é um palíndromo
+                    eh_palindromo_flag <- eh_palindromo(palavra)
+                    if (eh_palindromo_flag) {
+                      cat("Sim, '", palavra, "' é um palíndromo.\n", sep="")
+                    } else {
+                      cat("Não, '", palavra, "' não é um palíndromo.\n", sep="")
+                    }
+                    
+                    # Armazenar resultado
+                    resultados <- rbind(resultados, data.frame(Palavra=palavra, EhPalindromo=eh_palindromo_flag))
+                    
+                    # Incrementar contador de execuções
+                    contador_execucoes <- contador_execucoes + 1
+                    faltam <- 3 - (contador_execucoes %% 3)
+                    cat("Faltam", faltam, "execuções para gerar o gráfico.\n")
+                    
+                    # Gerar gráfico após cada 3 execuções
+                    if (contador_execucoes %% 3 == 0) {
+                      resultados$Verificacao <- seq_along(resultados$Palavra)
+                      resultados$EhPalindromo <- factor(resultados$EhPalindromo, levels=c(FALSE, TRUE), labels=c("Não", "Sim"))
+                      
+                      p <- ggplot(resultados, aes(x=Verificacao, y=EhPalindromo)) +
+                        geom_point(aes(color=EhPalindromo), size=4) +
+                        geom_text(aes(label=Palavra), vjust=-0.5, hjust=0.5, size=3, color="white") +
+                        scale_y_discrete() +
+                        labs(x="Verificação", y="É Palíndromo?", title="Verificação de Palíndromos") +
+                        scale_color_manual(values=c("red", "green")) +
+                        theme_minimal() +
+                        theme(plot.background = element_rect(fill = "black"),
+                              panel.background = element_rect(fill = "black"),
+                              text = element_text(color = "white"),
+                              axis.text = element_text(color = "white"),
+                              legend.position = "none")
+                      
+                      # Salvar o gráfico como PNG
+                      nome_arquivo <- paste0("verificacao_palindromos_", contador_execucoes, ".png")
+                      ggsave(nome_arquivo, plot = p, width = 8, height = 6, bg="black")
+                      cat("O gráfico foi salvo como:", nome_arquivo, "\n")
+                    }
+                    
+                    # Perguntar ao usuário se deseja verificar outro palíndromo
+                    continuar <- readline(prompt="Deseja verificar outro palíndromo? (s/n): ")
+                    if (tolower(continuar) != "s") {
+                      break
+                    }
+                    cat("\n")
+                  }
+                  
+                  print("Programa encerrado.")
+                }
+                
+                # Chama a função principal
+                main()
+                </code></pre>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Aprenda R. Todos os direitos reservados.</p>
-    </footer>
 </body>
 </html>
